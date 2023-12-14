@@ -16,7 +16,7 @@ def train_model():
     accuracy = clf.score(X_test, y_test)
     print(f"Accuracy: {accuracy}")
 
-    joblib.dump(clf, 'iris_classifier.pkl')
+    joblib.dump(clf, 'ml-service/iris_classifier.pkl')
 
 if __name__ == "__main__":
     train_model()

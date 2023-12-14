@@ -8,10 +8,10 @@ target = iris.target
 
 # Établir une connexion à la base de données
 conn = psycopg2.connect(
-    dbname="nom_de_la_bdd", 
-    user="utilisateur", 
-    password="motdepasse", 
-    host="adresse_hote"
+    dbname="iris", 
+    user="alex", 
+    password="notsure", 
+    host="127.0.0.1"
 )
 cursor = conn.cursor()
 
