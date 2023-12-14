@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: iris
+      POSTGRES_USER: alex
+      POSTGRES_PASSWORD: notsure
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    environment:
+      - DB_HOST=db
+      - DB_NAME=iris
+      - DB_USER=alex
+      - DB_PASSWORD=notsure
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"
+
+volumes:
+  db-data:
