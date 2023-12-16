@@ -4,15 +4,19 @@ services:
   db:
     container_name: db
     build: ./db-init/
-    # image: postgres:latest
-    # environment:
-    #   POSTGRES_DB: iris
-    #   POSTGRES_USER: alex
-    #   POSTGRES_PASSWORD: notsure
-    # volumes:
-    #   - db-data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+  
+  db-init:
+    container_name: db-init
+    build: ./organisateur/
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_NAME=iris
+      - DB_USER=alex
+      - DB_PASSWORD=notsure
 
   app:
     container_name: app
@@ -25,7 +29,7 @@ services:
     depends_on:
       - db
     ports:
-      - "5001:5001"
+      - "5000:5000"
 
 volumes:
   db-data:
