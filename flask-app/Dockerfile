@@ -3,6 +3,7 @@ FROM python:latest
 WORKDIR /app
 COPY requirements.txt .
 COPY app.py .
+COPY templates/template.html .
 COPY iris_classifier.pkl .
 RUN pip install -r requirements.txt
 
