@@ -19,3 +19,7 @@ docker-compose up -d
 <img width="475" alt="image" src="https://github.com/sebDtSci/iris_deployement/assets/121176289/fc1dba87-8317-4f0e-9074-5f7a47f820a8">
 
 It's done, the app is running on your local environement!
+
+# Schema
+
+<img width="1126" alt="image" src="https://github.com/sebDtSci/iris_deployement/assets/121176289/9c7aa2cb-854a-4388-b509-f5e9f36cfeb2">
